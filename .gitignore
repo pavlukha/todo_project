@@ -1,0 +1,5 @@
+# Перечень неподгружаемого в git 
+
+node_modules/
+.next/
+.vscode/
