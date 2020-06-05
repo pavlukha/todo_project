@@ -1,14 +1,20 @@
 import React from "react";
 import { connect } from "react-redux";
-import AddTodo from "./AddTodo";
 
 const TodoList = ({ todos }) => (
-  <ul>
+  <ol>
     {" "}
     {Object.entries(todos.byIds).map((todo) => (
-      <li> {todo[1].content} </li>
+      <li
+        style={{
+          color: "#3E2D84",
+          fontSize: "18px",
+        }}
+      >
+        {todo[1].content}
+      </li>
     ))}{" "}
-  </ul>
+  </ol>
 );
 
 const mapStateToProps = (state) => {

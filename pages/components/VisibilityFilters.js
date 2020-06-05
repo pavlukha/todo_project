@@ -6,11 +6,23 @@ import { VISIBILITY_FILTERS } from "../constants/constants";
 
 const VisibilityFilters = ({ activeFilter, setFilter }) => {
   return (
-    <div className="visibility-filters">
+    <div
+      className="visibility-filters"
+      style={{
+        width: "450px",
+        height: "100%",
+      }}
+    >
       {Object.keys(VISIBILITY_FILTERS).map((filterKey) => {
         const currentFilter = VISIBILITY_FILTERS[filterKey];
         return (
           <span
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              color: "#663300",
+              marginRight: "15px",
+            }}
             key={`visibility-filter-${currentFilter}`}
             className={cx(
               "filter",
