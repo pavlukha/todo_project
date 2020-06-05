@@ -1,14 +1,13 @@
 import React from "react";
 // import ReactDOM from "react-dom";
 import { createStore } from "redux";
-import rootReducer from "./reducer";
+import rootReducer from "./reducers/reducer";
 
 import { Provider } from "react-redux";
-import store from "./store";
+import store from "./store/store";
 
-import TodoApp from "./TodoApp";
+import TodoApp from "./components/TodoApp";
 
-// const rootElement = document.getElementById("root");
 class StoreFinale extends React.Component {
   render() {
     return (
@@ -17,7 +16,6 @@ class StoreFinale extends React.Component {
       </Provider>
     );
   }
-  // rootElement
 }
 
 export default StoreFinale;

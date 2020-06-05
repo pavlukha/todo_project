@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addTodo } from "./actions";
+import { addTodo } from "../constants/actions";
 
 class AddTodo extends React.Component {
   constructor(props) {
@@ -20,6 +20,7 @@ class AddTodo extends React.Component {
   render() {
     return (
       <div>
+        {/* <form onSubmit={this.handleAddTodo}> */}
         <input
           onChange={(e) => this.updateInput(e.target.value)}
           value={this.state.input}
@@ -27,6 +28,8 @@ class AddTodo extends React.Component {
         <button className="add-todo" onClick={this.handleAddTodo}>
           Add Todo
         </button>
+        {/* <button type="submit">Add Todo</button> */}
+        {/* </form> */}
       </div>
     );
   }

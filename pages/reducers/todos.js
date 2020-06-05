@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO } from "./actions";
+import { ADD_TODO, TOGGLE_TODO } from "../constants/actions";
 
 const initialState = {
   allIds: [],

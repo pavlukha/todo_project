@@ -1,7 +1,7 @@
 import React from "react";
 import cx from "classnames";
 import { connect } from "react-redux";
-import { setFilter } from "./actions";
+import { setFilter } from "../actions";
 
 const initialState = VISIBILITY_FILTERS.ALL;
 
