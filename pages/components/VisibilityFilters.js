@@ -22,6 +22,7 @@ const VisibilityFilters = ({ activeFilter, setFilter }) => {
               justifyContent: "center",
               color: "#663300",
               marginRight: "15px",
+              cursor: "pointer",
             }}
             key={`visibility-filter-${currentFilter}`}
             className={cx(

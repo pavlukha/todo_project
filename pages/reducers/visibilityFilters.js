@@ -1,11 +1,10 @@
 import React from "react";
-import cx from "classnames";
-import { connect } from "react-redux";
-import { setFilter } from "../actions";
+import { SET_FILTER } from "../constants/actions";
+import { VISIBILITY_FILTERS } from "../constants/constants";
 
 const initialState = VISIBILITY_FILTERS.ALL;
 
-export const visibilityFilter = (state = initialState, action) => {
+const visibilityFilter = (state = initialState, action) => {
   switch (action.type) {
     case "SET_FILTER": {
       return action.payload.filter;
@@ -19,3 +18,5 @@ export const visibilityFilter = (state = initialState, action) => {
 const mapStateToProps = (state) => {
   return { activeFilter: state.visibilityFilter };
 };
+
+export default visibilityFilter;

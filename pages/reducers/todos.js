@@ -1,6 +1,7 @@
 import { ADD_TODO, TOGGLE_TODO } from "../constants/actions";
 
 const initialState = {
+  todoList: [],
   allIds: [],
   byIds: {},
 };
@@ -9,29 +10,37 @@ export default function (state = initialState, action) {
   switch (action.type) {
     case ADD_TODO: {
       const { id, content } = action.payload;
+      const { todoList } = state;
+      const newArray1 = [
+        ...todoList,
+        {
+          text: content,
+          id,
+          completed: false,
+        },
+      ];
+
       return {
         ...state,
-        allIds: [...state.allIds, id],
-        byIds: {
-          ...state.byIds,
-          [id]: {
-            content,
-            completed: false,
-          },
-        },
+        todoList: newArray1,
       };
     }
     case TOGGLE_TODO: {
       const { id } = action.payload;
+      const { todoList } = state;
+
+      const newArray2 = todoList.map((el) => {
+        if (el.id === id) {
+          return {
+            ...el,
+            completed: !el.completed,
+          };
+        }
+        return el;
+      });
       return {
         ...state,
-        byIds: {
-          ...state.byIds,
-          [id]: {
-            ...state.byIds[id],
-            completed: !state.byIds[id].completed,
-          },
-        },
+        todoList: newArray2,
       };
     }
     default:
