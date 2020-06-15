@@ -3,6 +3,7 @@ import AddTodo from "./AddTodo";
 import TodoList from "./TodoList";
 import VisibilityFilters from "./VisibilityFilters";
 import { orange } from "@material-ui/core/colors";
+import SimpleDialog from "./Modal";
 
 const color = orange[300];
 
@@ -31,6 +32,7 @@ export default function TodoApp() {
       <AddTodo />
       <TodoList />
       <VisibilityFilters setFilters={setFilters} />
+      <SimpleDialog />
     </div>
   );
 }

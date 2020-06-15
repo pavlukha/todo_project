@@ -9,6 +9,7 @@ const VisibilityFilters = ({ activeFilter, setFilter }) => {
     <div
       className="visibility-filters"
       style={{
+        display: "block",
         width: "450px",
         height: "100%",
       }}
@@ -17,12 +18,13 @@ const VisibilityFilters = ({ activeFilter, setFilter }) => {
         const currentFilter = VISIBILITY_FILTERS[filterKey];
         return (
           <span
+            type="button"
             style={{
-              display: "flex",
+              display: "inline",
               justifyContent: "center",
               color: "#663300",
-              marginRight: "15px",
               cursor: "pointer",
+              marginRight: "15px",
             }}
             key={`visibility-filter-${currentFilter}`}
             className={cx(
